@@ -55,11 +55,11 @@ let s:always_white      = {"cterm": "19"}
 let s:bg               = s:none
 let s:bg_subtle        = s:dark_white
 let s:norm             = s:none
-let s:norm_subtle      = s:black
-let s:visual           = s:cyan
-let s:visual_fg        = s:white
+let s:norm_subtle      = s:white
+let s:visual           = s:yellow
+let s:visual_fg        = s:black
 let s:cursor_line      = {"cterm": "20"}
-let s:constant         = s:cyan
+let s:constant         = s:green
 let s:comment          = s:black
 let s:selection        = s:yellow
 let s:selection_fg     = s:always_dark_black
@@ -114,7 +114,10 @@ hi! link FoldColumn       LineNr
 hi! link SignColumn       LineNr
 
 " __Comment__
-call s:h("Comment",       {"fg": s:comment, "cterm": "italic"})
+" The next line draws a weird background color instead of setting it italic in
+" at least iTerm
+"call s:h("Comment",       {"fg": s:comment, "cterm": "italic"})
+call s:h("Comment",       {"fg": s:comment})
 
 " __Constant__
 call s:h("Constant",      {"fg": s:constant})
